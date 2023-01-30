@@ -54,3 +54,67 @@ MINUTES WATTS
 51	120
 60	120
 [END COURSE DATA]`;
+
+export const ergJsonContent = `{
+  "version": 1,
+  "parsedFileVersion": "2",
+  "parsedFileName": "2023-01-10_Interwał30.erg",
+  "name": "2023-01-10_Interwał30.erg",
+  "description": "Interwał 30\\" szybkość",
+  "ftp": 190,
+  "units": "IMPERIAL",
+  "workoutType": "BIKE",
+  "duration": 3600000,
+  "workoutBlocks": [
+    {
+      "duration": 480000,
+      "ftpScope": {
+        "min": 106,
+        "max": 106,
+        "minPercent": 56,
+        "maxPercent": 56,
+        "deviation": 0
+      }
+    },
+     {
+        "duration": 480000,
+        "ftpScope": {
+           "min": 124,
+           "max": 124,
+           "deviation": 0
+        }
+     },
+     {
+        "duration": 2100000,
+        "repeats": 10,
+        "workoutBlock": [
+           {
+              "duration": 30000,
+              "ftpScope": {
+                 "min": 256,
+                 "max": 256,
+                 "deviation": 0
+              }
+           },
+           {
+              "duration": 180000,
+              "ftpScope": {
+                 "min": 129,
+                 "max": 129,
+                 "deviation": 0
+              }
+           }
+        ]
+     },
+    {
+      "duration": 540000,
+      "ftpScope": {
+        "min": 120,
+        "max": 120,
+        "minPercent": 63,
+        "maxPercent": 63,
+        "deviation": 0
+      }
+    }
+  ]
+}`;
