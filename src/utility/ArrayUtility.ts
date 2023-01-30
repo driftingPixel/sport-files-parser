@@ -144,9 +144,9 @@ const getSequence = (
             ? 1
             : currentSequence.repeats * currentSequence.sequence.length)
       )
-    
+    }
+    return result
   }
-  return result
 }
 
 export const groupSequences = (arr: any[]) => {
@@ -160,39 +160,6 @@ export const groupSequences = (arr: any[]) => {
       ),
     }
   })
-
-  // if (elWithIndexes.indexes.length == 1) {
-  //   return result
-  // }
-
-  // const firstIndex = elWithIndexes.indexes[0]
-  // let repeats = 0;
-  // let currentNextElement = undefined as any;
-
-  // elWithIndexes.indexes.forEach(
-  //   (occurrenceIndex, elementIndex) => {
-  //     if (elementIndex == 0) {
-  //       currentNextElement = arr[occurrenceIndex + 1]
-  //     } else {
-  //       if (arr[occurrenceIndex + 1] === currentNextElement) {
-  //         if (elementIndex == 1 && currentNextElement !== arr[firstIndex]) {
-  //           sequence.push(currentNextElement)
-  //         }
-  //         repeats = elementIndex + 1
-  //       } else {
-  //         result = {
-  //           repeats: repeats,
-  //           sequence: sequence
-  //         }
-  //         return;
-  //       }
-  //     }
-  //   }
-  // )
-
-  // return elWithIndexes
-  // })
-
   const result = [] as any[]
   getSequence(elementsAndConcurrences, result)
 
