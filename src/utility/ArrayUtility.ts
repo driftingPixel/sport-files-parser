@@ -46,9 +46,11 @@ const getSequence = (
   currentSequence.repeats++
 
   if (elWithIndexes.indexes.length == 1) {
+    // Case when element exist only one time in full array
     result.push(currentSequence)
     getSequence(elementsAndOccurrence, result, undefined, ++currentIndex)
   } else {
+    // When exist sequence of 1 element many times (possible refactoring to more general case)
     if (elWithIndexes.indexes[1] - elWithIndexes.indexes[0] == 1) {
       getSequence(
         elementsAndOccurrence,
@@ -68,6 +70,7 @@ const getSequence = (
 
       const sequenceCanBeLength = arraysOfSequenceMaybe[0].length
 
+      //Try to get sequence longer than 1 element
       for (
         let arrayEqualing = 0;
         arrayEqualing < arraysOfSequenceMaybe.length;
@@ -79,6 +82,8 @@ const getSequence = (
             elWithIndexes.indexes[arrayEqualing] >
             elWithIndexes.indexes[1] - elWithIndexes.indexes[0]
         ) {
+          // When symbol on second position(index 1) position is not the same between first and second possible sequence
+          // and possible sequence is longer than 1.
           break
         }
         let counter = 0
@@ -101,6 +106,7 @@ const getSequence = (
               )
             }
           } else {
+            // If exist sequence and last item has corresponding sequence in further array but between sequence exist others elements. ex: 1,1,1,2,3,4,1 (ones)
             if (
               arrayEqualing == 0 &&
               symbolIndexInArray > 0 &&
@@ -138,7 +144,7 @@ const getSequence = (
             ? 1
             : currentSequence.repeats * currentSequence.sequence.length)
       )
-    }
+    
   }
   return result
 }
